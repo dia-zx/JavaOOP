@@ -21,6 +21,12 @@ public class Relation {
         setID1toID2(id1, id2, type);
     }
 
+    /**
+     * Установка отношения id1 к id2 (например, type CHILD означает id1 - ребенок id2 - родитель)
+     * @param id1 
+     * @param id2
+     * @param type
+     */
     void setID1toID2(int id1, int id2, Type type) {
         this.id1 = id1;
         this.id2 = id2;
@@ -39,22 +45,35 @@ public class Relation {
         return type;
     }
 
+    /**
+     * Запись данных экземпляра в поток
+     * @param stream_out
+     * @throws IOException
+     */
     public void save(DataOutputStream stream_out) throws IOException {
         stream_out.writeInt(id1);
         stream_out.writeInt(id2);
-        stream_out.writeInt(type.ordinal());
+        int itype = 0;
+        if (type == Type.CHILD)
+            itype = 1;
+        stream_out.writeInt(itype);
     }
     
+    /**
+     * Чтение данных экземпляра из потока
+     * @param stream_in
+     * @return 
+     * @throws IOException
+     */
     public static Relation load(DataInputStream stream_in) throws IOException {
         int id1 = stream_in.readInt();
         int id2 = stream_in.readInt();
         int itype = stream_in.readInt();
 
-        Type type;
-        if (itype == Type.CHILD.ordinal())
+        Type type = Type.SPOUSES;
+        if (itype == 1)
             type = Type.CHILD;
-        else
-            type = Type.SPOUSES;
+
 
         return new Relation(id1, id2, type);
     }

@@ -54,7 +54,10 @@ public class Person {
         stream_out.writeUTF(family);
         stream_out.writeUTF(middle_name);
         stream_out.writeLong(birthday.getTime());
-        stream_out.writeInt(gender.ordinal());
+        int igender = 0;
+        if (gender == Gender.FEMALE)
+            igender = 1;
+        stream_out.writeInt(igender);
         stream_out.writeUTF(info);
     }
 
@@ -72,11 +75,9 @@ public class Person {
         Date birthday = new Date(stream_in.readLong());
         int igender = stream_in.readInt();
         String info = stream_in.readUTF();
-        Gender gender;
-        if (igender == Gender.FEMALE.ordinal())
+        Gender gender = Gender.MALE;
+        if (igender == 1)
             gender = Gender.FEMALE;
-        else
-            gender = Gender.MALE;
 
         Person person = new Person(id, name, family, middle_name, gender);
         person.birthday = birthday;
