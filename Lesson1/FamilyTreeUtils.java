@@ -15,7 +15,7 @@ public class FamilyTreeUtils {
     public void testFillTree() {
         Person person1 = familyTree.addPerson("Дмитрий", "Ермоленко", "Юрьевич", Person.Gender.MALE);
         Person person21 = familyTree.addPerson("Валентина", "Округина", "Владимировна", Person.Gender.FEMALE);
-        Person person22 = familyTree.addPerson("Николаевич", "Ермоленко", "Николаевич", Person.Gender.MALE);
+        Person person22 = familyTree.addPerson("Иван", "Ермоленко", "Николаевич", Person.Gender.MALE);
         Person person31 = familyTree.addPerson("Любовь", "Безрукова", "Ивановна", Person.Gender.FEMALE);
         Person person32 = familyTree.addPerson("Владимир", "Округин", "Иванович", Person.Gender.MALE);
         Person person33 = familyTree.addPerson("Вера", "Евдокимовна", "Михайловна", Person.Gender.FEMALE);
@@ -39,8 +39,8 @@ public class FamilyTreeUtils {
         List<Person> res = new ArrayList<>();
         for (Relation relation : familyTree.getRelations()) {
             if (relation.getID1() == id && relation.getTypeID1toID2() == Type.CHILD)
-            if(familyTree.getPerson(id) != null)
-                res.add(familyTree.getPerson(id));
+            if(familyTree.getPerson(relation.getID2()) != null)
+                res.add(familyTree.getPerson(relation.getID2()));
         }
         return res;
     }

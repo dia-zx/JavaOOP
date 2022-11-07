@@ -1,5 +1,6 @@
 package Lesson1;
 
+import java.util.List;
 import java.util.Scanner;
 
 import Lesson1.Person.Gender;
@@ -31,6 +32,14 @@ public class main {
                 case "load":
                     tree.load("FamilyTree.dat");
                     break;
+                case "findparents":
+                    System.out.println("Введите ID: ");
+                    input = scanner.nextLine();
+                    List<Person> parents = utils.FindParents(Integer.parseInt(input));
+                    for (Person person : parents) {
+                        System.out.println(person);
+                    }
+                    break;
             
                 
                 default:
@@ -53,6 +62,7 @@ public class main {
         System.out.println("print - вывод дерева");
         System.out.println("save - сохранени в файл");
         System.out.println("load - загрузка дерева из файла");
+        System.out.println("findparents - нахождение родителей персоны с ID");
         System.out.println("***************************************");
     }
 
