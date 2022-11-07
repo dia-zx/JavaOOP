@@ -82,7 +82,6 @@ public class Person {
         person.birthday = birthday;
         person.info = info;
         return person;
-
     }
 
     @Override
