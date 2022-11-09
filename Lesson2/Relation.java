@@ -4,11 +4,13 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
+import Lesson2.Interfaces.IioStream;
+
 
 /**
  * класс для описания связей между людьми
  */
-public class Relation {
+public class Relation implements IioStream {
     enum Type {
         SPOUSES, // супруги
         CHILD, // ребенок
@@ -50,6 +52,7 @@ public class Relation {
      * @param stream_out
      * @throws IOException
      */
+    @Override
     public void save(DataOutputStream stream_out) throws IOException {
         stream_out.writeInt(id1);
         stream_out.writeInt(id2);
@@ -65,7 +68,8 @@ public class Relation {
      * @return 
      * @throws IOException
      */
-    public static Relation load(DataInputStream stream_in) throws IOException {
+    @Override
+    public void load(DataInputStream stream_in) throws IOException {
         int id1 = stream_in.readInt();
         int id2 = stream_in.readInt();
         int itype = stream_in.readInt();
@@ -73,9 +77,10 @@ public class Relation {
         Type type = Type.SPOUSES;
         if (itype == 1)
             type = Type.CHILD;
-
-
-        return new Relation(id1, id2, type);
+        
+        this.id1 = id1;
+        this.id2 = id2;
+        this.type = type;
     }
 
     @Override

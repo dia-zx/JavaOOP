@@ -12,6 +12,9 @@ public class FamilyTreeUtils {
         this.familyTree = familyTree;
     }
     
+    public FamilyTree geFamilyTree() {
+        return familyTree;
+    }
     
     public void testFillTree() {
         Person person1 = familyTree.addPerson("Дмитрий", "Ермоленко", "Юрьевич", Person.Gender.MALE);
