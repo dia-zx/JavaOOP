@@ -127,8 +127,8 @@ public class FamilyTree<T extends Person> {
      * @param middle_name
      * @return
      */
-    public List<Person> findPersonID(String name, String family, String middle_name) {
-        List<Person> res = new ArrayList<>();
+    public List<T> findPersonID(String name, String family, String middle_name) {
+        List<T> res = new ArrayList<>();
         for (T person : persons.values()) {
             if (person.name.equals(name) && person.second_name.equals(family)
                     && person.middle_name.equals(middle_name)) {
