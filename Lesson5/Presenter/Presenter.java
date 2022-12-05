@@ -29,8 +29,6 @@ public class Presenter {
 
         Menu userMenu = new Menu(view);
 
-
-
         currentUser = null;
         stage = 0;
         do {
@@ -45,23 +43,19 @@ public class Presenter {
         for (String command : currentUser.type.getCommands()) {
             switch (command) {
                 case "logout":
-        userMenu.addCommand(new UserLogout_Command(view, this, model))            
+                    userMenu.addCommand(new UserLogout_Command(view, this, model));
                     break;
-                    case "logout":
-                    userMenu.addCommand(new ChangePassword_Command(view, this, model, currentUser))            
-                                break;
+                case "changePassword":
+                    userMenu.addCommand(new ChangePassword_Command(view, this, model, currentUser));
+                    break;
 
             }
-            
+
         }
-        
 
+        do {
 
-        do{
-
-        }while(true);
-
-
+        } while (true);
 
     }
 
