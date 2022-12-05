@@ -1,6 +1,8 @@
 package Lesson5;
 
 import Lesson5.Model.Model;
+import Lesson5.Model.User;
+import Lesson5.Model.UserPrototypes.AdminPrototype;
 import Lesson5.Presenter.Presenter;
 import Lesson5.View.View;
 

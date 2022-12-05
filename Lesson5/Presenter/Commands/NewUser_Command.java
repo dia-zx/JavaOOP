@@ -44,7 +44,7 @@ public class NewUser_Command implements ICommand {
         view.print("Ваша Фамилия:");
         String second_name = view.input();
 
-        view.print("Введите пароль (" + Model.get_login_requarements() + ")");
+        view.print("Введите пароль (" + Model.get_password_requarements() + ")");
         String password = view.input();
         try {
             Model.checkPassword(password);
