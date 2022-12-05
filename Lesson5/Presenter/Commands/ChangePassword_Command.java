@@ -32,6 +32,12 @@
 
             view.print("Введите новый пароль:");
             String newpassword = view.input();
+            try{
+                Model.checkPassword(newpassword);
+            } catch (Exception e) {
+                view.print(e.toString());
+                return;
+            }
             if (user.changePassword(newpassword, oldpassword)) {
                 view.print("Пароль успешно изменен!");
                 return;

@@ -1,5 +1,6 @@
 package Lesson5.Model;
 
+import java.util.Collection;
 import java.util.HashMap;
 
 public class Model {
@@ -37,6 +38,14 @@ public class Model {
      */
     public void removeUser(String login) {
         users.remove(login);
+    }
+
+    /**
+     * Возвращает список пользователей
+     * @return
+     */
+    public Collection<User> getUsers() {
+        return users.values();
     }
 
     /**

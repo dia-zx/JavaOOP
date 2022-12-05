@@ -6,8 +6,9 @@ import java.util.List;
 
 public class UserPrototype implements IUserType {
    public UserPrototype() {
-    List<String> list = new ArrayList<>();
-    list.add("logout");        
+    list = new ArrayList<>();
+    list.add("logout");
+    list.add("changePassword");     
    }
 
     @Override

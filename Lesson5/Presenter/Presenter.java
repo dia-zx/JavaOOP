@@ -5,6 +5,7 @@ import Lesson5.Model.User;
 import Lesson5.Model.UserPrototypes.AdminPrototype;
 import Lesson5.Presenter.Commands.ChangePassword_Command;
 import Lesson5.Presenter.Commands.Exit_Command;
+import Lesson5.Presenter.Commands.GetUserList_Command;
 import Lesson5.Presenter.Commands.NewUser_Command;
 import Lesson5.Presenter.Commands.UserLogin_Command;
 import Lesson5.Presenter.Commands.UserLogout_Command;
@@ -52,6 +53,9 @@ public class Presenter {
                         break;
                     case "changePassword":
                         userMenu.addCommand(new ChangePassword_Command(view, this, model, currentUser));
+                        break;
+                    case "userlist":
+                        userMenu.addCommand(new GetUserList_Command(view, this, model, currentUser));
                         break;
 
                 }
