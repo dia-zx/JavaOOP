@@ -24,6 +24,6 @@ public interface IUserType {
      * 
      * @return
      */
-    public List<ICommand> getCommands();
+    public List<String> getCommands();
 
 }

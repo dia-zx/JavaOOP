@@ -10,7 +10,17 @@ public class Model {
     }
 
     /**
+     * Возвращает число пользователей в БД
+     * 
+     * @return
+     */
+    public int getUserCount() {
+        return users.size();
+    }
+
+    /**
      * Добавление пользователя
+     * 
      * @param user
      */
     public void addUser(User user) throws RuntimeException {
@@ -22,22 +32,22 @@ public class Model {
 
     /**
      * Удаление пользователя
+     * 
      * @param login
      */
     public void removeUser(String login) {
         users.remove(login);
     }
-    
 
     /**
      * Возвращает экземпляр пользователя с указанным логином
+     * 
      * @param login
-     * @return User - OK;  null - нет пользователя с таким логином
+     * @return User - OK; null - нет пользователя с таким логином
      */
     public User getUser(String login) {
         return users.get(login);
     }
-
 
     /**
      * Проверка существования логина

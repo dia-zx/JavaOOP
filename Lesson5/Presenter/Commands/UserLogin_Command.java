@@ -30,10 +30,12 @@ public class UserLogin_Command implements ICommand {
         view.print("Введите пароль:");
         String password = view.input();
         User user = model.getUser(login);
-        if (user != null) {
-            
+        if (user != null && user.checkPassword(password)) {
+            presenter.currentUser = user;
+            view.print("Добро пожаловать " + user.name + "!");
+            return;
         }
-
+        view.print("Неверный логин или пароль...");
     }
 
     private View view;

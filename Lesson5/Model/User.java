@@ -20,8 +20,15 @@ public class User {
     public String secondName;
     public IUserType type;
 
-    
-    
+    /**
+     * Проверка пароля пользователя
+     * @param password
+     * @return true - если пароли совпадают
+     */
+    public boolean checkPassword(String password) {
+        return this.password.equals(password);
+    }
+
     /**
      * Изменение пароля
      * 
@@ -30,7 +37,7 @@ public class User {
      * @return true - пароль был изменен
      */
     public boolean changePassword(String newPassword, String oldPassword) {
-        if (password.equals(this.password)) {
+        if (checkPassword(oldPassword)) {
             password = newPassword;
             return true;
         }

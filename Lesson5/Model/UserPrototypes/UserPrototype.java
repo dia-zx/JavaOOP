@@ -3,19 +3,20 @@ package Lesson5.Model.UserPrototypes;
 import java.util.ArrayList;
 import java.util.List;
 
-import Lesson5.Presenter.Commands.ICommand;
 
 public class UserPrototype implements IUserType {
-   
+   public UserPrototype() {
+    List<String> list = new ArrayList<>();
+    list.add("logout");        
+   }
+
     @Override
     public Type getType() {
         return Type.ADMIN;
     }
 
     @Override
-    public List<ICommand> getCommands() {
-        List<ICommand> list = new ArrayList<>();
-        //list.add(null)
+    public List<String> getCommands() {
         return list;
     }
 
@@ -24,4 +25,5 @@ public class UserPrototype implements IUserType {
         return "пользователь";
     }
     
+    private List<String> list;
 }
