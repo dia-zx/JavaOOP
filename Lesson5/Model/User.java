@@ -85,6 +85,6 @@ public class User {
 
     @Override
     public String toString() {
-        return "логин: " + login + " " + secondName + " " + name + " " + reg_Date.toString() + " - " + type.toString();
+        return "логин: " + login + " " + secondName + " " + name + " зарегистрирован: " + reg_Date.toString() + " - " + type.toString();
     }
 }

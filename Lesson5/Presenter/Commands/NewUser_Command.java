@@ -59,7 +59,7 @@ public class NewUser_Command implements ICommand {
             try {
                 model.addUser(new User(name, second_name, login, password, new UserPrototype()));
             } catch (Exception e) {
-                view.print(e.toString());
+                view.print(e.getMessage());
             }
         }
 

@@ -82,6 +82,32 @@ public class Model {
     }
 
     /**
+     * Смена логина пользователя
+     * @param current_login
+     * @param new_login
+     * @param password
+     * @throws RuntimeException
+     */
+    public void changeLogin(String current_login, String new_login, String password) throws RuntimeException{
+        User user = getUser(current_login);
+        if (user == null) {
+            throw new RuntimeException("Пользователя с таким Login нет!");
+        }
+
+        checkLogin(new_login);
+
+        if (FindLogin(new_login)) {
+            throw new RuntimeException("Пользователь с таким Login уже есть!");
+        }
+        if (!user.changeLogin(new_login, password)) {
+            throw new RuntimeException("Неверный пароль!");
+        }
+        users.remove(current_login);
+        users.put(new_login, user);
+    }
+
+
+    /**
      * Проверка пароля на соответствие требованиям
      * 
      * @param password

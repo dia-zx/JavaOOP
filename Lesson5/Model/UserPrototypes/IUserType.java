@@ -2,7 +2,7 @@ package Lesson5.Model.UserPrototypes;
 
 import java.util.List;
 
-import Lesson5.Presenter.Commands.ICommand;
+
 
 /**
  * Интерфейс типа пользователя

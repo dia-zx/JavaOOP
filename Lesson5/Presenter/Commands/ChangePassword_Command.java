@@ -35,7 +35,7 @@
             try{
                 Model.checkPassword(newpassword);
             } catch (Exception e) {
-                view.print(e.toString());
+                view.print(e.getMessage());
                 return;
             }
             if (user.changePassword(newpassword, oldpassword)) {

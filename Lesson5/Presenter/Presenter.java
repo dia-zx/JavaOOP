@@ -3,12 +3,14 @@ package Lesson5.Presenter;
 import Lesson5.Model.Model;
 import Lesson5.Model.User;
 import Lesson5.Model.UserPrototypes.AdminPrototype;
-import Lesson5.Presenter.Commands.ChangePassword_Command;
-import Lesson5.Presenter.Commands.Exit_Command;
-import Lesson5.Presenter.Commands.GetUserList_Command;
-import Lesson5.Presenter.Commands.NewUser_Command;
-import Lesson5.Presenter.Commands.UserLogin_Command;
-import Lesson5.Presenter.Commands.UserLogout_Command;
+import Lesson5.Presenter.Commands.*;
+// import Lesson5.Presenter.Commands.ChangeLogin_Command;
+// import Lesson5.Presenter.Commands.ChangePassword_Command;
+// import Lesson5.Presenter.Commands.Exit_Command;
+// import Lesson5.Presenter.Commands.GetUserList_Command;
+// import Lesson5.Presenter.Commands.NewUser_Command;
+// import Lesson5.Presenter.Commands.UserLogin_Command;
+// import Lesson5.Presenter.Commands.UserLogout_Command;
 import Lesson5.View.View;
 
 /**
@@ -24,7 +26,7 @@ public class Presenter {
     public User currentUser;
 
     public void Start() {
-        model.addUser(new User("admin", "admin", "admin", "admin", new AdminPrototype()));
+        model.addUser(new User("Иван", "Грозный", "admin", "admin", new AdminPrototype()));
         view.print("в БД добавлен тестовый администратор (логин: \"admin\", пароль: \"admin\")");
 
         Menu mainMenu = new Menu(view);
@@ -57,7 +59,9 @@ public class Presenter {
                     case "userlist":
                         userMenu.addCommand(new GetUserList_Command(view, this, model, currentUser));
                         break;
-
+                    case "login_change":
+                        userMenu.addCommand(new ChangeLogin_Command(view, this, model, currentUser));
+                        break;
                 }
 
             }

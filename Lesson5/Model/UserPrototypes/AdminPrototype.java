@@ -8,9 +8,10 @@ import java.util.List;
 public class AdminPrototype implements IUserType {
     public AdminPrototype() {
         list = new ArrayList<>();
-        list.add("logout");
         list.add("userlist");
         list.add("changePassword");
+        list.add("login_change");
+        list.add("logout");
     }
 
     @Override
