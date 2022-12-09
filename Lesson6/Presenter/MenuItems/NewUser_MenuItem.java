@@ -10,7 +10,7 @@ import Lesson6.View.View;
  * NewUser_Command
  */
 public class NewUser_MenuItem implements IMenuItem {
-    public NewUser_MenuItem (View view, Presenter presenter, Model model) {
+    public NewUser_MenuItem(View view, Presenter presenter, Model model) {
         this.view = view;
         this.presenter = presenter;
         this.model = model;
@@ -27,14 +27,14 @@ public class NewUser_MenuItem implements IMenuItem {
     }
 
     @Override
-    public void Exercute() {
+    public void exercute() {
         view.print("************** " + get_command() + "************** ");
-        view.print("Введите логин + (" + Model.get_login_requarements() + ")");
+        view.print("Введите логин (" + Model.get_login_requarements() + ")");
         String login = view.input();
         try {
             Model.checkLogin(login);
         } catch (Exception e) {
-            view.print(e.toString());
+            view.print(e.getMessage());
             return;
         }
 
@@ -49,7 +49,7 @@ public class NewUser_MenuItem implements IMenuItem {
         try {
             Model.checkPassword(password);
         } catch (Exception e) {
-            view.print(e.toString());
+            view.print(e.getMessage());
             return;
         }
 

@@ -27,7 +27,7 @@ public class GetUserList_MenuItem implements IMenuItem {
     }
 
     @Override
-    public void Exercute() {
+    public void exercute() {
         view.print("************** " + get_command() + "************** ");
         for (User user : model.getUsers()) {
             view.print(user.toString());

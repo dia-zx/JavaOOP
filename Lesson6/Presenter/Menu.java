@@ -12,59 +12,62 @@ public class Menu {
 
     public Menu(View view) {
         this.view = view;
-        menuCommands = new HashMap<>();
+        menuItems = new HashMap<>();
         currentUser = null;
     }
-    
+
     /**
      * Очистка списка команд меню
      */
     public void clear() {
-        menuCommands.clear();
+        menuItems.clear();
     }
 
     /**
      * Добавление команды в меню команд
-     * @param command
+     * 
+     * @param menuitem
      */
-    public void addCommand(IMenuItem command) {
-        menuCommands.put(command.get_command(), command);
+    public void addMenuItem(IMenuItem menuitem) {
+        menuItems.put(menuitem.get_command(), menuitem);
     }
 
     /**
      * Добавление списка команд в меню команд
+     * 
      * @param command
      */
-    public void addCommands(List<IMenuItem> commands) {
-        for (IMenuItem command : commands) {
-            menuCommands.put(command.get_command(), command);            
+    public void addMenuItems(List<IMenuItem> menuitems) {
+        for (IMenuItem item : menuitems) {
+            menuItems.put(item.get_command(), item);
         }
     }
 
     /**
      * Функционирование меню
+     * 
      * @return
      */
-    public IMenuItem Exercute() {
+    public IMenuItem exercute() {
         do {
             view.print("");
             view.print("------------------- меню ------------------");
-            for (IMenuItem command : menuCommands.values()) {
-                view.print(command.get_command() + " - " + command.get_description());
+            for (IMenuItem item : menuItems.values()) {
+                view.print(item.get_command() + " - " + item.get_description());
             }
             view.print("-------------------------------------------");
-            if(currentUser == null)
+            if (currentUser == null)
                 view.print("Введите команду");
             else
                 view.print(currentUser.name + " " + currentUser.secondName + ". Введите команду:");
             String input = view.input();
-            if (menuCommands.containsKey(input)) {
-                return menuCommands.get(input);
+            if (menuItems.containsKey(input)) {
+                return menuItems.get(input);
             }
             view.print("неверная команда!");
         } while (true);
     }
 
     private View view;
-    private HashMap<String, IMenuItem> menuCommands;
+    private HashMap<String, IMenuItem> menuItems;
 }

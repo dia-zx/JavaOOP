@@ -24,7 +24,7 @@ public class ChangeLogin_MenuItem implements IMenuItem {
     }
 
     @Override
-    public void Exercute() {
+    public void exercute() {
         view.print("************** " + get_command() + "************** ");
         view.print("Введите новый логин:");
         String login = view.input();

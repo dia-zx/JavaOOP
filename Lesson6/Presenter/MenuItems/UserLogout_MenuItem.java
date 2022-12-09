@@ -26,11 +26,11 @@ public class UserLogout_MenuItem implements IMenuItem {
     }
 
     @Override
-    public void Exercute() {
+    public void exercute() {
         presenter.currentUser = null;
         view.print("До свидания...");
     }
-    
+
     private View view;
     private Model model;
     private Presenter presenter;

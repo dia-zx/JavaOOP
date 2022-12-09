@@ -23,7 +23,7 @@ public class UserLogin_MenuItem implements IMenuItem {
     }
 
     @Override
-    public void Exercute() {
+    public void exercute() {
         view.print("************** " + get_command() + "************** ");
         view.print("Введите логин:");
         String login = view.input();
