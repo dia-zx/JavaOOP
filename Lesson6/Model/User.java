@@ -1,9 +1,9 @@
-package Lesson5.Model;
+package Lesson6.Model;
 
 import java.util.Calendar;
 import java.util.Date;
 
-import Lesson5.Model.UserPrototypes.IUserType;
+import Lesson6.Model.UserPrototypes.IUserType;
 
 public class User {
 

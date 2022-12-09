@@ -1,4 +1,4 @@
-package Lesson5.Model.UserPrototypes;
+package Lesson6.Model.UserPrototypes;
 
 import java.util.ArrayList;
 import java.util.List;

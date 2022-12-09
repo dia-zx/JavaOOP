@@ -1,12 +1,12 @@
-package Lesson5.Presenter.Commands;
+package Lesson6.Presenter.MenuItems;
 
-import Lesson5.Model.Model;
-import Lesson5.Model.User;
-import Lesson5.Presenter.Presenter;
-import Lesson5.View.View;
+import Lesson6.Model.Model;
+import Lesson6.Model.User;
+import Lesson6.Presenter.Presenter;
+import Lesson6.View.View;
 
-public class ChangeLogin_Command implements ICommand {
-    public ChangeLogin_Command(View view, Presenter presenter, Model model, User user) {
+public class ChangeLogin_MenuItem implements IMenuItem {
+    public ChangeLogin_MenuItem(View view, Presenter presenter, Model model, User user) {
         this.view = view;
         this.presenter = presenter;
         this.model = model;

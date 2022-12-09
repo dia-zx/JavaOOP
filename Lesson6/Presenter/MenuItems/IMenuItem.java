@@ -1,6 +1,6 @@
-package Lesson5.Presenter.Commands;
+package Lesson6.Presenter.MenuItems;
 
-public interface ICommand {
+public interface IMenuItem {
     public String get_command();
     public String get_description();
     public void Exercute();    

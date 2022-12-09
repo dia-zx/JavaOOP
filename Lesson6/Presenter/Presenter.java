@@ -1,10 +1,10 @@
-package Lesson5.Presenter;
+package Lesson6.Presenter;
 
-import Lesson5.Model.Model;
-import Lesson5.Model.User;
-import Lesson5.Model.UserPrototypes.AdminPrototype;
-import Lesson5.Presenter.Commands.*;
-import Lesson5.View.View;
+import Lesson6.Model.Model;
+import Lesson6.Model.User;
+import Lesson6.Model.UserPrototypes.AdminPrototype;
+import Lesson6.Presenter.MenuItems.*;
+import Lesson6.View.View;
 
 /**
  * presenter
@@ -23,9 +23,9 @@ public class Presenter {
         view.print("в БД добавлен тестовый администратор (логин: \"admin\", пароль: \"admin\")");
 
         Menu mainMenu = new Menu(view);
-        mainMenu.addCommand(new NewUser_Command(view, this, model));
-        mainMenu.addCommand(new UserLogin_Command(view, this, model));
-        mainMenu.addCommand(new Exit_Command());
+        mainMenu.addCommand(new NewUser_MenuItem(view, this, model));
+        mainMenu.addCommand(new UserLogin_MenuItem(view, this, model));
+        mainMenu.addCommand(new Exit_MenuItem());
 
         Menu userMenu = new Menu(view);
 
@@ -44,16 +44,16 @@ public class Presenter {
             for (String command : currentUser.type.getCommands()) {
                 switch (command) {
                     case "logout":
-                        userMenu.addCommand(new UserLogout_Command(view, this, model));
+                        userMenu.addCommand(new UserLogout_MenuItem(view, this, model));
                         break;
                     case "changePassword":
                         userMenu.addCommand(new ChangePassword_Command(view, this, model, currentUser));
                         break;
                     case "userlist":
-                        userMenu.addCommand(new GetUserList_Command(view, this, model, currentUser));
+                        userMenu.addCommand(new GetUserList_MenuItem(view, this, model, currentUser));
                         break;
                     case "login_change":
-                        userMenu.addCommand(new ChangeLogin_Command(view, this, model, currentUser));
+                        userMenu.addCommand(new ChangeLogin_MenuItem(view, this, model, currentUser));
                         break;
                 }
 
