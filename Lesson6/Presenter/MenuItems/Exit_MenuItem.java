@@ -16,7 +16,7 @@ public class Exit_MenuItem implements IMenuItem{
     }
 
     @Override
-    public void Exercute() {
+    public void exercute() {
         System.exit(0);        
     }    
 }
