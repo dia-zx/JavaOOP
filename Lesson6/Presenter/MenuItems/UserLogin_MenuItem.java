@@ -1,12 +1,12 @@
-package Lesson5.Presenter.Commands;
+package Lesson6.Presenter.MenuItems;
 
-import Lesson5.Model.Model;
-import Lesson5.Model.User;
-import Lesson5.Presenter.Presenter;
-import Lesson5.View.View;
+import Lesson6.Model.Model;
+import Lesson6.Model.User;
+import Lesson6.Presenter.Presenter;
+import Lesson6.View.View;
 
-public class UserLogin_Command implements ICommand {
-    public UserLogin_Command(View view, Presenter presenter, Model model) {
+public class UserLogin_MenuItem implements IMenuItem {
+    public UserLogin_MenuItem(View view, Presenter presenter, Model model) {
         this.view = view;
         this.presenter = presenter;
         this.model = model;
@@ -23,7 +23,7 @@ public class UserLogin_Command implements ICommand {
     }
 
     @Override
-    public void Exercute() {
+    public void exercute() {
         view.print("************** " + get_command() + "************** ");
         view.print("Введите логин:");
         String login = view.input();

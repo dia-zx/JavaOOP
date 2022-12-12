@@ -1,9 +1,9 @@
-package Lesson5.Presenter.Commands;
+package Lesson6.Presenter.MenuItems;
 
 /**
  * Exit_Command
  */
-public class Exit_Command implements ICommand{
+public class Exit_MenuItem implements IMenuItem{
 
     @Override
     public String get_command() {
@@ -16,7 +16,7 @@ public class Exit_Command implements ICommand{
     }
 
     @Override
-    public void Exercute() {
+    public void exercute() {
         System.exit(0);        
     }    
 }

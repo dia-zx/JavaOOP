@@ -1,8 +1,8 @@
-package Lesson5;
+package Lesson6;
 
-import Lesson5.Model.Model;
-import Lesson5.Presenter.Presenter;
-import Lesson5.View.View;
+import Lesson6.Model.Model;
+import Lesson6.Presenter.Presenter;
+import Lesson6.View.View;
 
 public class main {
     public static void main(String[] args) {
@@ -12,5 +12,4 @@ public class main {
         presenter.Start();
 
     }
-    
 }

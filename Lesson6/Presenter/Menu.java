@@ -1,70 +1,73 @@
-package Lesson5.Presenter;
+package Lesson6.Presenter;
 
 import java.util.HashMap;
 import java.util.List;
 
-import Lesson5.Model.User;
-import Lesson5.Presenter.Commands.ICommand;
-import Lesson5.View.View;
+import Lesson6.Model.User;
+import Lesson6.Presenter.MenuItems.IMenuItem;
+import Lesson6.View.View;
 
 public class Menu {
     public User currentUser;
 
     public Menu(View view) {
         this.view = view;
-        menuCommands = new HashMap<>();
+        menuItems = new HashMap<>();
         currentUser = null;
     }
-    
+
     /**
      * Очистка списка команд меню
      */
     public void clear() {
-        menuCommands.clear();
+        menuItems.clear();
     }
 
     /**
      * Добавление команды в меню команд
-     * @param command
+     * 
+     * @param menuitem
      */
-    public void addCommand(ICommand command) {
-        menuCommands.put(command.get_command(), command);
+    public void addMenuItem(IMenuItem menuitem) {
+        menuItems.put(menuitem.get_command(), menuitem);
     }
 
     /**
      * Добавление списка команд в меню команд
+     * 
      * @param command
      */
-    public void addCommands(List<ICommand> commands) {
-        for (ICommand command : commands) {
-            menuCommands.put(command.get_command(), command);            
+    public void addMenuItems(List<IMenuItem> menuitems) {
+        for (IMenuItem item : menuitems) {
+            menuItems.put(item.get_command(), item);
         }
     }
 
     /**
      * Функционирование меню
+     * 
      * @return
      */
-    public ICommand Exercute() {
+    public IMenuItem exercute() {
         do {
             view.print("");
             view.print("------------------- меню ------------------");
-            for (ICommand command : menuCommands.values()) {
-                view.print(command.get_command() + " - " + command.get_description());
+            for (IMenuItem item : menuItems.values()) {
+                view.print(item.get_command() + " - " + item.get_description());
             }
             view.print("-------------------------------------------");
-            if(currentUser == null)
+            if (currentUser == null)
                 view.print("Введите команду");
             else
                 view.print(currentUser.name + " " + currentUser.secondName + ". Введите команду:");
             String input = view.input();
-            if (menuCommands.containsKey(input)) {
-                return menuCommands.get(input);
+            if (menuItems.containsKey(input)) {
+                return menuItems.get(input);
             }
             view.print("неверная команда!");
         } while (true);
     }
 
     private View view;
-    private HashMap<String, ICommand> menuCommands;
+    private HashMap<String, IMenuItem> menuItems;
 }

@@ -1,15 +1,15 @@
 
-package Lesson5.Presenter.Commands;
+package Lesson6.Presenter.MenuItems;
 
-import Lesson5.Model.Model;
-import Lesson5.Presenter.Presenter;
-import Lesson5.View.View;
+import Lesson6.Model.Model;
+import Lesson6.Presenter.Presenter;
+import Lesson6.View.View;
 
 /**
  * выход пользователя Logout
  */
-public class UserLogout_Command implements ICommand {
-    public UserLogout_Command(View view, Presenter presenter, Model model) {
+public class UserLogout_MenuItem implements IMenuItem {
+    public UserLogout_MenuItem(View view, Presenter presenter, Model model) {
         this.view = view;
         this.presenter = presenter;
         this.model = model;
@@ -26,11 +26,11 @@ public class UserLogout_Command implements ICommand {
     }
 
     @Override
-    public void Exercute() {
+    public void exercute() {
         presenter.currentUser = null;
         view.print("До свидания...");
     }
-    
+
     private View view;
     private Model model;
     private Presenter presenter;
