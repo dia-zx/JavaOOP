@@ -7,6 +7,6 @@ namespace FileManager.Infrastructrure
     /// </summary>
     public class DrivePanel
     {
-        public DriveInfo[] DrivesList { get { return DriveInfo.GetDrives(); } }
+        public static DriveInfo[] DrivesList  => DriveInfo.GetDrives();  
     }
 }

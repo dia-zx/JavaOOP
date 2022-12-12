@@ -9,7 +9,7 @@
         Title="О программе" Height="190" Width="400">
     <DockPanel >
         <TextBlock DockPanel.Dock="Bottom" TextWrapping="Wrap" Foreground="Black" FontStyle="Italic" Height="20"
-                   Margin="0"
+                   Margin="0" Padding="10, 0"
                    Text= "@2022 Designed and programmed by I.A. Daviydov" />
         
         <StackPanel Margin="10,10,10,0" Orientation="Vertical">
@@ -22,8 +22,8 @@
             <TextBlock TextWrapping="Wrap" Text= "Программа WPF FileManager" TextAlignment="Center" Foreground="Green"/>
             <TextBlock ></TextBlock>
             <TextBlock TextWrapping="Wrap" Foreground="Blue"
-                   Text= "Разработана в рамках курса 'Основы ООП в С#' платформа GeekBrains." />
-            <TextBlock  Text="Version: 0.9 (17.08.2022)" TextAlignment="Center"></TextBlock>
+                   Text= "Разработана в рамках платформы GeekBrains." />
+            <TextBlock  Text="Version: 0.91 (12.12.2022)" TextAlignment="Center"></TextBlock>
 
             <Button  DockPanel.Dock="Bottom" Width="100" Height="20" Click="Button_Click" Cursor="Hand" Margin="10">
                 OK

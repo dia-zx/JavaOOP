@@ -38,14 +38,14 @@
                 <ColumnDefinition ></ColumnDefinition>
                 <ColumnDefinition ></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Margin="20" FontWeight="Bold" FontSize="16" IsDefault="True" Click="Button_Click">
+            <Button Margin="20" FontWeight="Bold" FontSize="16" IsDefault="True" Click="Button_Click" Cursor="Hand">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="10"/>
                     </Style>
                 </Button.Resources>                
                 Подтвердить</Button>
-            <Button Margin="20" Grid.Column="1" FontWeight="Bold" FontSize="16"  IsCancel="True">
+            <Button Margin="20" Grid.Column="1" FontWeight="Bold" FontSize="16"  IsCancel="True" Cursor="Hand">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="10"/>

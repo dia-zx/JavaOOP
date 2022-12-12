@@ -30,9 +30,9 @@ namespace FileManager.ViewModels
             OnPropertyChanged(nameof(LeftPanelCurrentDir));
         }
 
-        public IEnumerable<FileTableList> FileTableListLeft { get => FileManagerClass.GetInstance().FilePanelLeft.GetFileList(); }
-        public IEnumerable<FileTableList> FileTableListRight { get => FileManagerClass.GetInstance().FilePanelRight.GetFileList(); }
-        public IEnumerable<DriveInfo> Drives { get => FileManagerClass.GetInstance().DrivePanel.DrivesList; }
+        public IEnumerable<FileTableList> FileTableListLeft => FileManagerClass.GetInstance().FilePanelLeft.GetFileList(); 
+        public IEnumerable<FileTableList> FileTableListRight => FileManagerClass.GetInstance().FilePanelRight.GetFileList(); 
+        public IEnumerable<DriveInfo> Drives => DrivePanel.DrivesList; 
         public string LeftPanelCurrentDir
         {
             get => FileManagerClass.GetInstance().FilePanelLeft.CurDir.FullName;

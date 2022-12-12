@@ -13,17 +13,17 @@ namespace FileManager.Models
             _DateTime = dateTime;
             _FileSystemInfo = filesystemInfo;
         }
+
+        public string Name =>_Name;
+        public string Extention =>_Extention;
+        public string Size =>_Size;
+        public DateTime DateTime =>_DateTime; 
+        public FileSystemInfo FileSystemInfo => _FileSystemInfo;  
+
         private string _Name;
         private string _Extention;
         private string _Size;
         private DateTime _DateTime;
         private FileSystemInfo _FileSystemInfo;
-
-
-        public string Name { get=>_Name;}
-        public string Extention { get=>_Extention;}
-        public string Size { get=>_Size;}
-        public DateTime DateTime { get=>_DateTime; }
-        public FileSystemInfo FileSystemInfo { get=> _FileSystemInfo; } 
     }
 }

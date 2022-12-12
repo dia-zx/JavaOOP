@@ -88,7 +88,7 @@
             <StatusBar Grid.Row="0"  ItemsSource="{Binding Drives}">
                 <StatusBar.ItemTemplate>
                     <DataTemplate>
-                        <StatusBarItem >
+                        <StatusBarItem Padding="0">
                             <Button Click="LeftPanelDrivesButton_Click"                                  
                                     Content="{Binding Path=Name}"
                                     Cursor="Hand" FontWeight="Bold" FontSize="14">
@@ -107,13 +107,20 @@
             <!--#endregion-->
 
             <!--#region RightPanelDrivesButton -->
-            <StatusBar Grid.Row="0" Grid.Column="2" ItemsSource="{Binding Drives}">
+            <StatusBar Grid.Row="0" Grid.Column="2" ItemsSource="{Binding Drives}" >
                 <StatusBar.ItemTemplate>
                     <DataTemplate>
-                        <StatusBarItem >
+                        <StatusBarItem  Padding="0">
                             <Button Click="RightPanelDrivesButton_Click"                                  
                                     Content="{Binding Path=Name}"
-                                    Cursor="Hand" FontWeight="Bold" FontSize="14">
+                                    Cursor="Hand" FontWeight="Bold" FontSize="14" >
+                                
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="3"/>
+                                    </Style>
+                                </Button.Resources>
+                                
                             </Button>
                         </StatusBarItem>
                     </DataTemplate>
@@ -204,26 +211,25 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Command="{Binding ViewCommand}" >
+                <Button Grid.Column="0" Command="{Binding ViewCommand}" Cursor="Hand">
                     F3 Просмотр
                 </Button>
-                <Button Grid.Column="1" Command="{Binding CreateFileCommand}">
+                <Button Grid.Column="1" Command="{Binding CreateFileCommand}" Cursor="Hand">
                     F4 Файл
                 </Button>
-                <Button Grid.Column="2" Command="{Binding CopyFileCommand}">
+                <Button Grid.Column="2" Command="{Binding CopyFileCommand}" Cursor="Hand">
                     F5 Копирование
                 </Button>
-                <Button Grid.Column="3" Command="{Binding MoveFileCommand}">
+                <Button Grid.Column="3" Command="{Binding MoveFileCommand}" Cursor="Hand">
                     F6 Перемещение
                 </Button>
-                <Button Grid.Column="4" Command="{Binding CreateDirrectoryCommand}">
+                <Button Grid.Column="4" Command="{Binding CreateDirrectoryCommand}" Cursor="Hand">
                     F7 Каталог
                 </Button>
-                <Button Grid.Column="5" Command="{Binding RemoveFileCommand}">
+                <Button Grid.Column="5" Command="{Binding RemoveFileCommand}" Cursor="Hand">
                     F8 Удаление
                 </Button>
-                <Button Grid.Column="6" Command="{Binding CloseApplicationCommand}"
-                        >
+                <Button Grid.Column="6" Command="{Binding CloseApplicationCommand}" Cursor="Hand">
                     Alt+F4 Выход
                 </Button>
             </Grid>
